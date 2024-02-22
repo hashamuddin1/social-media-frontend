@@ -11,4 +11,23 @@
 
 .left-corner-signup{
   width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.center-div{
+  display: flex;
+  flex-direction: column;
+  row-gap: 18px;
+  width: 50%;
+}
+
+.text-field-adjust{
+  width: 100%;
+}
+
+.form-btn{
+  background-color: #00296b !important;
 }
