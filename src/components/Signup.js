@@ -2,6 +2,7 @@ import * as React from 'react';
 import "../App.css"
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
+import auth from '../assets/auth.jpg';
 
 export default function Signup() {
   return (
@@ -27,6 +28,8 @@ export default function Signup() {
         </div>
     </div>
     <div className='right-corner-signup'>
+       
+        <img src={auth} className='auth-img'/>
         
     </div>
     </div>
