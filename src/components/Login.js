@@ -6,17 +6,14 @@ import auth from '../assets/auth.png';
 import { Link } from "react-router-dom";
 import {themeColor}from "../config/index"
 
-export default function Signup() {
+export default function Login() {
   return (
     <>
     <div className='signup-flex'>
     <div className='left-corner-signup'>
         <div className='center-div'>
             <div className='text-field-adjust'>
-            <h1 style={{color:themeColor}}>Sign Up!</h1>
-            </div>
-            <div>
-            <TextField className='text-field-adjust' id="standard-basic" label="Full Name" variant="standard" />
+            <h1 style={{color:themeColor}}>Login!</h1>
             </div>
             <div>
             <TextField className='text-field-adjust' id="standard-basic" label="Email Address" variant="standard" />
@@ -25,13 +22,10 @@ export default function Signup() {
             <TextField className='text-field-adjust' id="standard-basic" label="Password" variant="standard" />
             </div>
             <div>
-            <TextField className='text-field-adjust' id="standard-basic" label="Confirm Password" variant="standard" />
+            <Button className='text-field-adjust form-btn' variant="contained">Log In</Button>
             </div>
             <div>
-            <Button className='text-field-adjust form-btn' variant="contained">Sign Up</Button>
-            </div>
-            <div>
-              <span>Already have Account? </span><span><Link to="/login" style={{color:themeColor}}>Log In</Link></span>
+              <span>Do not have an Account? </span><span><Link to="/"  style={{color:themeColor}}>Sign Up</Link></span>
             </div>
         </div>
     </div>

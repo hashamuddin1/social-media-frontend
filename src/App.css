@@ -1,3 +1,7 @@
+:root {
+  --main-color: #00296b;
+}
+
 .signup-flex{
   display: flex;
   width: 100%;
@@ -5,7 +9,7 @@
 }
 
 .right-corner-signup{
-  background-color: #00296b;
+  background-color: var(--main-color);;
   width: 50%;
   display: flex;
   justify-content: center;
@@ -32,7 +36,7 @@
 }
 
 .form-btn{
-  background-color: #00296b !important;
+  background-color: var(--main-color) !important;
 }
 
 .auth-img{
