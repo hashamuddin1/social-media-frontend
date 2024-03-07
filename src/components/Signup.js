@@ -6,7 +6,8 @@ import auth from '../assets/auth.png'
 import { Link } from 'react-router-dom'
 import { themeColor } from '../config/index'
 import { Visibility, VisibilityOff } from '@mui/icons-material'
-import { IconButton, InputAdornment, } from '@mui/material'
+import { IconButton, InputAdornment } from '@mui/material'
+import toast, { Toaster } from 'react-hot-toast'
 
 export default function Signup() {
   const [fullName, setFullName] = useState('')
@@ -47,13 +48,16 @@ export default function Signup() {
       password,
       confirmPassword,
     })
+    toast.success('Sign Up Successfully!')
   }
 
   return (
     <>
       <div className="signup-flex">
+      <Toaster position="top-right" reverseOrder={false} />
         <div className="left-corner-signup">
           <div className="center-div">
+            
             <div className="text-field-adjust">
               <h1 style={{ color: themeColor }}>Sign Up!</h1>
             </div>
@@ -81,7 +85,7 @@ export default function Signup() {
               <TextField
                 className="text-field-adjust"
                 onChange={handlePassword}
-                type={showPassword ? "text" : "password"}
+                type={showPassword ? 'text' : 'password'}
                 value={password}
                 id="standard-basic"
                 label="Password"
@@ -105,7 +109,7 @@ export default function Signup() {
               <TextField
                 className="text-field-adjust"
                 onChange={handleConfirmPassword}
-                type={showConfirmPassword ? "text" : "password"}
+                type={showConfirmPassword ? 'text' : 'password'}
                 value={confirmPassword}
                 id="standard-basic"
                 label="Confirm Password"
