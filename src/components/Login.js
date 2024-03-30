@@ -31,7 +31,7 @@ export default function Login() {
     </div>
     <div className='right-corner-signup'>
        
-        <img src={auth} className='auth-img'/>
+        <img src={auth} className='auth-img' alt='intro'/>
         
     </div>
     </div>

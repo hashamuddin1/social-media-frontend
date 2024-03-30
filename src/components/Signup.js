@@ -42,6 +42,7 @@ export default function Signup() {
   }
 
   const submitSignup = () => {
+   
     console.log({
       fullName,
       emailAddress,
@@ -149,7 +150,7 @@ export default function Signup() {
           </div>
         </div>
         <div className="right-corner-signup">
-          <img src={auth} className="auth-img" />
+          <img src={auth} className="auth-img" alt='intro' />
         </div>
       </div>
     </>
