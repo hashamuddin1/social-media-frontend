@@ -8,6 +8,7 @@ import { themeColor } from '../config/index'
 import { Visibility, VisibilityOff } from '@mui/icons-material'
 import { IconButton, InputAdornment } from '@mui/material'
 import toast, { Toaster } from 'react-hot-toast'
+import Grid from '@mui/material/Grid'
 
 export default function Signup() {
   const [fullName, setFullName] = useState('')
@@ -42,7 +43,6 @@ export default function Signup() {
   }
 
   const submitSignup = () => {
-   
     console.log({
       fullName,
       emailAddress,
@@ -54,11 +54,10 @@ export default function Signup() {
 
   return (
     <>
-      <div className="signup-flex">
       <Toaster position="top-right" reverseOrder={false} />
-        <div className="left-corner-signup">
+      <Grid container>
+        <Grid item xs={12} md={6} lg={6} className="left-corner-signup">
           <div className="center-div">
-            
             <div className="text-field-adjust">
               <h1 style={{ color: themeColor }}>Sign Up!</h1>
             </div>
@@ -148,11 +147,18 @@ export default function Signup() {
               </span>
             </div>
           </div>
-        </div>
-        <div className="right-corner-signup">
-          <img src={auth} className="auth-img" alt='intro' />
-        </div>
-      </div>
+        </Grid>
+        <Grid
+          item
+          md={6}
+          lg={6}
+          xs={0}
+          display={{ xs: 'none', md: 'block' }}
+          className="right-corner-signup"
+        >
+          <img src={auth} className="auth-img" alt="intro" />
+        </Grid>
+      </Grid>
     </>
   )
 }

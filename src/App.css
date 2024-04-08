@@ -2,43 +2,50 @@
   --main-color: #00296b;
 }
 
-.signup-flex{
-  display: flex;
-  width: 100%;
+.right-corner-signup {
+  background-color: var(--main-color);
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
   height: 100vh;
 }
 
-.right-corner-signup{
-  background-color: var(--main-color);;
-  width: 50%;
+.left-corner-signup {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100vh;
 }
 
-.left-corner-signup{
-  width: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  
-}
-
-.center-div{
+.center-div {
   display: flex;
   flex-direction: column;
   row-gap: 18px;
   width: 50%;
 }
 
-.text-field-adjust{
+.text-field-adjust {
   width: 100%;
 }
 
-.form-btn{
+.form-btn {
   background-color: var(--main-color) !important;
 }
 
-.auth-img{
+.auth-img {
   width: 50%;
+}
+
+@media (max-width: 600px) {
+  .left-corner-signup {
+    width: 100%;
+    height: 100vh;
+  }
+
+  .center-div {
+    display: flex;
+    flex-direction: column;
+    row-gap: 18px;
+    width: 80%;
+  }
 }
