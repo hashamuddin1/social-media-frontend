@@ -11,23 +11,12 @@ import toast, { Toaster } from 'react-hot-toast'
 import Grid from '@mui/material/Grid'
 
 export default function Login() {
-  const [fullName, setFullName] = useState('')
   const [emailAddress, setEmailAddress] = useState('')
   const [password, setPassword] = useState('')
-  const [confirmPassword, setConfirmPassword] = useState('')
   const [showPassword, setShowPassword] = useState(false)
-  const [showConfirmPassword, setShowConfirmPassword] = useState(false)
-
-  const handleClickShowConfirmPassword = () => {
-    setShowConfirmPassword(!showConfirmPassword)
-  }
 
   const handleClickShowPassword = () => {
     setShowPassword(!showPassword)
-  }
-
-  const handleFullName = (event) => {
-    setFullName(event.target.value)
   }
 
   const handleEmailAddress = (event) => {
@@ -38,16 +27,10 @@ export default function Login() {
     setPassword(event.target.value)
   }
 
-  const handleConfirmPassword = (event) => {
-    setConfirmPassword(event.target.value)
-  }
-
   const submitSignup = () => {
     console.log({
-      fullName,
       emailAddress,
       password,
-      confirmPassword,
     })
     toast.success('Login Successfully!')
   }
