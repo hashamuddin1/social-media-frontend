@@ -9,6 +9,7 @@ import { Visibility, VisibilityOff } from '@mui/icons-material'
 import { IconButton, InputAdornment } from '@mui/material'
 import toast, { Toaster } from 'react-hot-toast'
 import Grid from '@mui/material/Grid'
+import { useNavigate } from 'react-router-dom'
 
 export default function Signup() {
   const [fullName, setFullName] = useState('')
@@ -17,6 +18,8 @@ export default function Signup() {
   const [confirmPassword, setConfirmPassword] = useState('')
   const [showPassword, setShowPassword] = useState(false)
   const [showConfirmPassword, setShowConfirmPassword] = useState(false)
+
+  const navigate = useNavigate()
 
   const handleClickShowConfirmPassword = () => {
     setShowConfirmPassword(!showConfirmPassword)
@@ -50,6 +53,10 @@ export default function Signup() {
       confirmPassword,
     })
     toast.success('Sign Up Successfully!')
+
+    setTimeout(() => {
+      navigate('/')
+    }, 3000)
   }
 
   return (
