@@ -91,7 +91,7 @@ export default function Login() {
             <div>
               <span>Do not have Account? </span>
               <span>
-                <Link to="/" style={{ color: themeColor }}>
+                <Link to="/signup" style={{ color: themeColor }}>
                   Sign Up
                 </Link>
               </span>
