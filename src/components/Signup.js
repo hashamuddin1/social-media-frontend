@@ -10,9 +10,12 @@ import { IconButton, InputAdornment } from '@mui/material'
 import toast, { Toaster } from 'react-hot-toast'
 import Grid from '@mui/material/Grid'
 import { useNavigate } from 'react-router-dom'
+import { baseUrl } from '../config/index'
+import axios from 'axios'
 
 export default function Signup() {
-  const [fullName, setFullName] = useState('')
+  const [firstName, setFirstName] = useState('')
+  const [lastName, setLastName] = useState('')
   const [emailAddress, setEmailAddress] = useState('')
   const [password, setPassword] = useState('')
   const [confirmPassword, setConfirmPassword] = useState('')
@@ -29,8 +32,12 @@ export default function Signup() {
     setShowPassword(!showPassword)
   }
 
-  const handleFullName = (event) => {
-    setFullName(event.target.value)
+  const handleFirstName = (event) => {
+    setFirstName(event.target.value)
+  }
+
+  const handleLastName = (event) => {
+    setLastName(event.target.value)
   }
 
   const handleEmailAddress = (event) => {
@@ -45,18 +52,33 @@ export default function Signup() {
     setConfirmPassword(event.target.value)
   }
 
-  const submitSignup = () => {
+  const submitSignup = async () => {
     console.log({
-      fullName,
+      firstName,
+      lastName,
       emailAddress,
       password,
       confirmPassword,
     })
-    toast.success('Sign Up Successfully!')
-
-    setTimeout(() => {
-      navigate('/')
-    }, 3000)
+    try {
+      const response = await axios.post(`${baseUrl}/api/userSignUp`, {
+        first_name: firstName,
+        last_name: lastName,
+        email: emailAddress,
+        password,
+      })
+      console.log(response)
+      if (response.data.success === true) {
+        toast.success('Sign Up Successfully!')
+        setTimeout(() => {
+          navigate('/')
+        }, 3000)
+      } else {
+        toast.error(response.data.message)
+      }
+    } catch (error) {
+      console.error('Error:', error)
+    }
   }
 
   return (
@@ -71,10 +93,20 @@ export default function Signup() {
             <div>
               <TextField
                 className="text-field-adjust"
-                onChange={handleFullName}
-                value={fullName}
+                onChange={handleFirstName}
+                value={firstName}
                 id="standard-basic"
-                label="Full Name"
+                label="First Name"
+                variant="standard"
+              />
+            </div>
+            <div>
+              <TextField
+                className="text-field-adjust"
+                onChange={handleLastName}
+                value={lastName}
+                id="standard-basic"
+                label="Last Name"
                 variant="standard"
               />
             </div>
