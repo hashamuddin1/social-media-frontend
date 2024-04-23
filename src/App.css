@@ -36,6 +36,13 @@
   width: 50%;
 }
 
+.card-main{
+  display: flex;
+  justify-content: center !important;
+  flex-direction: column !important;
+  align-items: center;
+}
+
 @media (max-width: 600px) {
   .left-corner-signup {
     width: 100%;
