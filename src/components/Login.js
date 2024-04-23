@@ -9,11 +9,14 @@ import { Visibility, VisibilityOff } from '@mui/icons-material'
 import { IconButton, InputAdornment } from '@mui/material'
 import toast, { Toaster } from 'react-hot-toast'
 import Grid from '@mui/material/Grid'
+import { useNavigate } from 'react-router-dom'
 
 export default function Login() {
   const [emailAddress, setEmailAddress] = useState('')
   const [password, setPassword] = useState('')
   const [showPassword, setShowPassword] = useState(false)
+
+  const navigate = useNavigate()
 
   const handleClickShowPassword = () => {
     setShowPassword(!showPassword)
@@ -33,6 +36,10 @@ export default function Login() {
       password,
     })
     toast.success('Login Successfully!')
+
+    setTimeout(() => {
+      navigate('/')
+    }, 3000)
   }
 
   return (
@@ -78,7 +85,7 @@ export default function Login() {
                 }}
               />
             </div>
-            
+
             <div>
               <Button
                 className="text-field-adjust form-btn"
